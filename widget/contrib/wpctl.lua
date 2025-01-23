@@ -25,7 +25,7 @@ local function factory(args)
 			wpctl.last = volume_now
 		end)
 	end
-	helpers.newtimer(string.format("wpctl-viewer-default_audio_sink"), timeout, wpctl.update)
+	helpers.newtimer(string.format("wpctl-viewer-%s", wpctl.sink), timeout, wpctl.update)
 	return wpctl
 end
 return factory
